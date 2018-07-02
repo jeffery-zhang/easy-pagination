@@ -51,7 +51,7 @@ function paginatorElements(totalPage, range) {
             </div>`;
 }
 
-export default class Pagination {
+class EasyPagination {
   constructor(paginatorElement, pageObject) {
     this.paginatorElement = paginatorElement;
     this.totalPage = pageObject.totalPage;
@@ -160,3 +160,5 @@ export default class Pagination {
     });
   }
 }
+
+typeof module == 'object' && typeof exports == 'object' ? module.exports = EasyPagination : window.EasyPagination = EasyPagination;
