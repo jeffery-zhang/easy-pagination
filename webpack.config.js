@@ -8,11 +8,14 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist/'),
-    filename: 'index.js',
+    filename: 'index.min.js',
   },
+  devtool: '#source-map',
   plugins: [
     new UglifyjsPlugin({
       exclude: /(node_modules)/,
+      sourceMap: true,
+      parallel: true
     }),
     new ExtractTextPlugin('easy-pagination.min.css'),
   ],
