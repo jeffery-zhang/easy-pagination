@@ -36,7 +36,7 @@ function calculatePage(totalPage, range, currentPage) {
   };
 }
 
-function paginatorElements(totalPage, range) {
+function paginatorElements(totalPage, range, prevText, nextText) {
   let mainPaginator = '';
   for (let i = 0; i< range; i++) {
     mainPaginator += `<a href="javascript:;" class="page-item main-page-button">${i + 1}</a>`;
@@ -44,9 +44,9 @@ function paginatorElements(totalPage, range) {
 
   return `<div class="pagination-container">
               <a href="javascript:;" class="page-item first-page-button">1...</a>
-              <a href="javascript:;" class="page-item prev-page-button"><</a>
+              <a href="javascript:;" class="page-item prev-page-button">${prevText}</a>
               ${mainPaginator}
-              <a href="javascript:;" class="page-item next-page-button">></a>
+              <a href="javascript:;" class="page-item next-page-button">${nextText}</a>
               <a href="javascript:;" class="page-item last-page-button">...${totalPage}</a>
             </div>`;
 }
@@ -57,6 +57,8 @@ export default class EasyPagination {
     this.totalPage = pageObject.totalPage;
     this.currentPage = pageObject.currentPage || 1;
     this.range = pageObject.range && pageObject.range >= 3 ? pageObject.range : 5;
+    this.prevText = pageObject.prevText || '<';
+    this.nextText = pageObject.nextText || '>';
     this.callback = pageObject.callback || function (page) {
           console.log(page);
         };

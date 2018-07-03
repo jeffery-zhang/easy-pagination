@@ -1,6 +1,6 @@
 {
   "name": "easy-pagination",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A simple pagination plugin, develop by pure native js and es2015, does not depend on any frameworks",
   "main": "dist/index.min.js",
   "repository": {
@@ -8,12 +8,19 @@
     "url": "git+https://github.com/jeffery-zhang/easy-pagination.git"
   },
   "scripts": {
-    "test": "mocha",
     "build": "rm -rf ./dist && webpack --mode production --config ./webpack.config.js"
   },
   "author": "jeffery.zhang",
   "private": false,
   "license": "ISC",
+  "keywords": [
+    "page",
+    "pagination",
+    "paginator",
+    "paginate",
+    "component",
+    "plugin"
+  ],
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
