@@ -14,7 +14,7 @@ module.exports = {
     new UglifyjsPlugin({
       exclude: /(node_modules)/,
     }),
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin('easy-pagination.min.css'),
   ],
   module: {
     rules: [
