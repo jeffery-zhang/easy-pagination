@@ -51,13 +51,15 @@ function paginatorElements(totalPage, range) {
             </div>`;
 }
 
-class EasyPagination {
+export default class EasyPagination {
   constructor(paginatorElement, pageObject) {
     this.paginatorElement = paginatorElement;
     this.totalPage = pageObject.totalPage;
     this.currentPage = pageObject.currentPage || 1;
     this.range = pageObject.range && pageObject.range >= 3 ? pageObject.range : 5;
-    this.callback = pageObject.callback;
+    this.callback = pageObject.callback || function (page) {
+          console.log(page);
+        };
 
     this.left = calculatePage(this.totalPage, this.range, this.currentPage).leftPage;
     this.right = calculatePage(this.totalPage, this.range, this.currentPage).rightPage;
@@ -160,5 +162,3 @@ class EasyPagination {
     });
   }
 }
-
-export default EasyPagination;

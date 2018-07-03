@@ -1,0 +1,8 @@
+{
+  "ignore": "/node_modules/",
+  "presets": [
+    "stage-2",
+    "es2015"
+  ],
+  "plugins": ["transform-runtime", "dynamic-import-webpack"]
+}
