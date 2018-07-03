@@ -1,18 +1,7 @@
-function hasClass(ele, name) {
-  return !!ele.className.match(new RegExp('(\\s|^)' + name + '(\\s|$)'));
-}
-
-function addClass(ele, name) {
-  if (!hasClass(ele, name)) {
-    ele.className += ' ' + name;
-  }
-}
-
-function removeClass(ele, name) {
-  if (hasClass(ele, name)) {
-    ele.className = ele.className.replace(new RegExp('(\\s|^)' + name + '(\\s|$)'), ' ');
-  }
-}
+import {
+  addClass,
+  removeClass,
+} from './utils/handleClass'
 
 function calculatePage(totalPage, range, currentPage) {
   let leftPage = 1;
@@ -74,7 +63,7 @@ export default class EasyPagination {
   }
 
   renderPaginatorElements() {
-    this.paginatorElement.innerHTML = paginatorElements(this.totalPage, this.range);
+    this.paginatorElement.innerHTML = paginatorElements(this.totalPage, this.range, this.prevText, this.nextText);
 
     this.renderElementsContent();
     this.bindEvents();

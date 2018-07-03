@@ -2,13 +2,10 @@
   "name": "easy-pagination",
   "version": "1.0.4",
   "description": "A simple pagination plugin, develop by pure native js and es2015, does not depend on any frameworks",
-  "main": "dist/index.min.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jeffery-zhang/easy-pagination.git"
-  },
-  "scripts": {
-    "build": "rm -rf ./dist && webpack --mode production --config ./webpack.config.js"
   },
   "author": "jeffery.zhang",
   "private": false,
